@@ -1,0 +1,1 @@
+{"backupId":"c49dd45e","dbmsType":"MYSQL","databaseName":"backup_database_java","backupType":"FULL","compressionType":"ZIP","storageType":"S3","storageLocation":null,"timestamp":[2026,8,27,1,19,9,114976700],"sizeBytes":325,"sha256Checksum":"a83d3c17f2641c99579b9e34a5b2fd4c20d67c880c53b9315c16577c171df455","includedTables":[]}

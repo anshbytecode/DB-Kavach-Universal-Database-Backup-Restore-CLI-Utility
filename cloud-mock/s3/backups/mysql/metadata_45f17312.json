@@ -1,0 +1,1 @@
+{"backupId":"45f17312","dbmsType":"MYSQL","databaseName":"backup_database_java","backupType":"FULL","compressionType":"TAR_GZ","storageType":"S3","storageLocation":null,"timestamp":[2026,8,26,23,52,50,370719800],"sizeBytes":212,"sha256Checksum":"a83d3c17f2641c99579b9e34a5b2fd4c20d67c880c53b9315c16577c171df455","includedTables":[]}

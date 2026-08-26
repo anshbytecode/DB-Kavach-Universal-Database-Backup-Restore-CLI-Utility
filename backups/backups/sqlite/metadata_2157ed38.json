@@ -1,0 +1,1 @@
+{"backupId":"2157ed38","dbmsType":"SQLITE","databaseName":"sample_db.db","backupType":"FULL","compressionType":"GZIP","storageType":"LOCAL","storageLocation":null,"timestamp":[2026,8,26,23,54,37,756800700],"sizeBytes":212,"sha256Checksum":"1956751a86bc3e05ecc38c71419a106435eac5c868d8633116e5ddd3ff5815d0","includedTables":["sample_data"]}

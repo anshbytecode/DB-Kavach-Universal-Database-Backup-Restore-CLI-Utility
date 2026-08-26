@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: db-backup-cli
+  main:
+    banner-mode: off
+    web-application-type: servlet
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:h2:file:./data/backup_audit;AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+backup:
+  local-storage-path: ./backups
+  temp-dir: ./temp-backups
+  slack:
+    enabled: false
+    webhook-url: ""
+  cloud:
+    s3:
+      bucket-name: my-database-backups
+      region: us-east-1
+      mock-mode: true
+    gcp:
+      bucket-name: my-database-backups
+      mock-mode: true
+    azure:
+      container-name: my-database-backups
+      connection-string: ""
+      mock-mode: true
+
+logging:
+  level:
+    root: WARN
+    com.dbbackup: INFO
+    org.springframework: WARN
+    org.hibernate: WARN
+    com.zaxxer.hikari: WARN
+    org.mongodb: WARN
