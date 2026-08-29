@@ -43,6 +43,7 @@ class BackupServiceTest {
         CompressionService compressionService = new CompressionService();
 
         LocalStorageService localStorageService = new LocalStorageService();
+        
         ReflectionTestUtils.setField(localStorageService, "localStoragePath", "./target/test-backups");
 
         StorageServiceFactory storageServiceFactory = new StorageServiceFactory(List.of(localStorageService));
@@ -55,6 +56,7 @@ class BackupServiceTest {
 
     @Test
     void testFullBackupExecution(@org.junit.jupiter.api.io.TempDir Path tempDir) throws Exception {
+        
         when(repository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
 
         File dbFile = tempDir.resolve("test_backup_db.db").toFile();
