@@ -27,8 +27,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class BackupServiceTest {
-    
-
     @Mock
     private BackupHistoryRepository repository;
 
@@ -36,7 +34,6 @@ class BackupServiceTest {
 
     @BeforeEach
     void setUp() {
-        
         SQLiteAdapter sqLiteAdapter = new SQLiteAdapter();
         DbmsAdapterFactory dbmsAdapterFactory = new DbmsAdapterFactory(List.of(sqLiteAdapter));
 
