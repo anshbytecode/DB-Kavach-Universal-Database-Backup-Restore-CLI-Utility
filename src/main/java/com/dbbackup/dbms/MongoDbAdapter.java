@@ -43,9 +43,11 @@ public class MongoDbAdapter implements DbmsAdapter {
 
     @Override
     public List<String> getTables(DatabaseCredentials credentials) throws Exception {
+        
         List<String> collections = new ArrayList<>();
         String uri = buildConnectionString(credentials);
         try (MongoClient mongoClient = MongoClients.create(uri)) {
+
             
             MongoDatabase db = mongoClient.getDatabase(credentials.getDatabaseName());
             for (String name : db.listCollectionNames()) {
@@ -57,6 +59,7 @@ public class MongoDbAdapter implements DbmsAdapter {
 
     @Override
     public File performBackup(BackupRequest request, File rawOutputFile) throws Exception {
+        
         DatabaseCredentials creds = request.getCredentials();
 
         if (ProcessRunner.isCommandAvailable("mongodump")) {
