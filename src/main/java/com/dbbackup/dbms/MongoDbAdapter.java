@@ -63,12 +63,14 @@ public class MongoDbAdapter implements DbmsAdapter {
         DatabaseCredentials creds = request.getCredentials();
 
         if (ProcessRunner.isCommandAvailable("mongodump")) {
+            
             log.info("Using native 'mongodump' CLI tool for MongoDB backup...");
             List<String> command = new ArrayList<>();
             command.add("mongodump");
             command.add("--host=" + creds.getHost());
             command.add("--port=" + creds.getPort());
             if (creds.getUsername() != null && !creds.getUsername().isEmpty()) {
+                
                 command.add("--username=" + creds.getUsername());
                 command.add("--password=" + creds.getPassword());
             }
