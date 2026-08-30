@@ -71,6 +71,7 @@ public class MongoDbAdapter implements DbmsAdapter {
             command.add("--port=" + creds.getPort());
             if (creds.getUsername() != null && !creds.getUsername().isEmpty()) {
                 
+                
                 command.add("--username=" + creds.getUsername());
                 command.add("--password=" + creds.getPassword());
             }
@@ -96,6 +97,7 @@ public class MongoDbAdapter implements DbmsAdapter {
 
     @Override
     public void performRestore(RestoreRequest request, File uncompressedSourceFile) throws Exception {
+        
         DatabaseCredentials creds = request.getTargetCredentials();
 
         if (request.isDryRun()) {
