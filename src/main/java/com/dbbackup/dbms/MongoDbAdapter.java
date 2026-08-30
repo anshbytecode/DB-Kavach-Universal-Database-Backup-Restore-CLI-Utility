@@ -34,6 +34,7 @@ public class MongoDbAdapter implements DbmsAdapter {
             MongoDatabase db = mongoClient.getDatabase(credentials.getDatabaseName() != null ? credentials.getDatabaseName() : "admin");
             Document ping = db.runCommand(new Document("ping", 1));
             return ping.getDouble("ok") == 1.0 || ping.getInteger("ok", 0) == 1;
+            
         } catch (Exception e) {
             log.error("MongoDB connection test failed: {}", e.getMessage());
             throw new Exception("Failed to connect to MongoDB: " + e.getMessage(), e);
@@ -45,6 +46,7 @@ public class MongoDbAdapter implements DbmsAdapter {
         List<String> collections = new ArrayList<>();
         String uri = buildConnectionString(credentials);
         try (MongoClient mongoClient = MongoClients.create(uri)) {
+            
             MongoDatabase db = mongoClient.getDatabase(credentials.getDatabaseName());
             for (String name : db.listCollectionNames()) {
                 collections.add(name);
