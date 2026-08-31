@@ -64,10 +64,10 @@ class BackupServiceTest {
         creds.setDbmsType(DbmsType.SQLITE);
         creds.setDatabaseName("test_backup_db");
         creds.setFilePath(dbFile.getAbsolutePath());
-
         BackupRequest request = new BackupRequest();
         
         request.setCredentials(creds);
+        
         request.setBackupType(BackupType.FULL);
         request.setCompressionType(CompressionType.GZIP);
         request.setStorageType(StorageType.LOCAL);
@@ -79,6 +79,7 @@ class BackupServiceTest {
         assertEquals(DbmsType.SQLITE, metadata.getDbmsType());
         
         assertEquals(CompressionType.GZIP, metadata.getCompressionType());
+        
         assertTrue(metadata.getSizeBytes() > 0);
         assertNotNull(metadata.getSha256Checksum());
     }
