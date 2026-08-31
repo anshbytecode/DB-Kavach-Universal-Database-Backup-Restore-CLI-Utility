@@ -55,6 +55,7 @@ class BackupServiceTest {
     @Test
     void testFullBackupExecution(@org.junit.jupiter.api.io.TempDir Path tempDir) throws Exception {
         
+        
         when(repository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
 
         File dbFile = tempDir.resolve("test_backup_db.db").toFile();
