@@ -51,6 +51,7 @@ public class CredentialVaultServiceTest {
 
     @Test
     public void testListAndRemoveProfiles() throws Exception {
+        
         CredentialProfile p1 = new CredentialProfile();
         p1.setProfileName("db1");
         p1.setDbmsType(DbmsType.SQLITE);
