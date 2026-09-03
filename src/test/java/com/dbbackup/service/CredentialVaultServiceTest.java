@@ -80,6 +80,7 @@ public class CredentialVaultServiceTest {
 
     @Test
     public void testVaultAccessFailsWithWrongMasterPassword() throws Exception {
+        
         CredentialProfile profile = new CredentialProfile();
         profile.setProfileName("test-profile");
         profile.setDbmsType(DbmsType.MYSQL);
