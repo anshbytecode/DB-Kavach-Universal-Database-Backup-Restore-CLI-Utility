@@ -28,6 +28,7 @@ backup:
   cloud:
     s3:
       bucket-name: my-database-backups
+      
       region: us-east-1
       mock-mode: true
     gcp:
@@ -44,5 +45,6 @@ logging:
     com.dbbackup: INFO
     org.springframework: WARN
     org.hibernate: WARN
+    
     com.zaxxer.hikari: WARN
     org.mongodb: WARN
