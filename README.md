@@ -88,49 +88,6 @@ java -jar target/db-backup-cli-1.0.0.jar <command> [options]
 
 ---
 
-## ⚡ Quick Start & Setup
-
-### Prerequisites
-- JDK 17+
-- Maven 3.8+
-
-### 1. Build Backend & Frontend
-```bash
-mvn clean package
-```
-
-### 2. Run Web Application
-```bash
-java -jar target/db-backup-cli-1.0.0.jar
-```
-Open your browser to: **http://localhost:8080**
-
----
-
-## 🐳 Docker Deployment
-
-Multi-stage Dockerfile provided.
-
-### Build Image
-```bash
-docker build -t db-kavach-banking .
-```
-
-### Run Container
-```bash
-docker run -p 8080:8080 -e PORT=8080 db-kavach-banking
-```
-
----
-
-## ☁️ Render Deployment
-
-When deploying to Render, the dynamic `$PORT` environment variable is passed safely to JVM system properties:
-```bash
-ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]
-```
-
----
 
 ## 🧪 Testing
 
