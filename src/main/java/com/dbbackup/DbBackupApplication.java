@@ -38,13 +38,12 @@ public class DbBackupApplication implements CommandLineRunner, ExitCodeGenerator
             System.out.println("=========================================================================");
             System.out.println(" 🛡️  DB KAVACH - UNIVERSAL DATABASE SECURITY & BACKUP UTILITY          ");
             System.out.println("=========================================================================");
-            System.out.println(" 🌐 Web Server Started: http://localhost:8080/");
+            String activePort = System.getProperty("server.port", System.getenv("PORT") != null ? System.getenv("PORT") : "8080");
+            System.out.println(" 🌐 Web Server Started: http://localhost:" + activePort + "/");
             System.out.println(" 🚀 Keep this terminal window open to access the Web Dashboard UI.");
             System.out.println(" 💡 Press Ctrl+C anytime to stop the Web Server.");
             System.out.println(" 💡 To run CLI commands, execute: java -jar target/db-backup-cli-1.0.0.jar <command>");
             System.out.println("=========================================================================");
-            // Block main thread to keep Spring Web Server alive in server mode
-            Thread.currentThread().join();
         }
     }
 

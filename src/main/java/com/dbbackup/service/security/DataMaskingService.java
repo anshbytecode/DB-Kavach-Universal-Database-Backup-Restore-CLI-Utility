@@ -58,7 +58,7 @@ public class DataMaskingService {
 
         String result = content;
 
-        // 1. Mask Email Addresses (e.g. john.doe@example.com -> j***e@example.com)
+        // 1. Mask Email Addresses (e.g. anshul.bhilare@example.com -> a***e@example.com)
         Matcher emailMatcher = EMAIL_PATTERN.matcher(result);
         StringBuffer emailBuffer = new StringBuffer();
         while (emailMatcher.find()) {

@@ -52,7 +52,7 @@ public class EncryptionServiceTest {
         File encryptedFile = tempDir.resolve("original.txt.enc").toFile();
         File decryptedFile = tempDir.resolve("restored.txt").toFile();
 
-        String fileContent = "SELECT * FROM users; INSERT INTO users VALUES (1, 'john', 'secret');";
+        String fileContent = "SELECT * FROM users; INSERT INTO users VALUES (1, 'anshul', 'secret');";
         Files.writeString(inputFile.toPath(), fileContent);
 
         String passphrase = "FileEncryptionPassphrase123";

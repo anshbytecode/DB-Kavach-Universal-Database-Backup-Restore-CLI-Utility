@@ -22,11 +22,11 @@ public class DataMaskingServiceTest {
 
     @Test
     public void testEmailMasking() {
-        String input = "User email is john.doe@example.com and alice@domain.org";
+        String input = "User email is anshul.bhilare@example.com and dhruv.patel@domain.org";
         String masked = maskingService.maskContent(input);
 
-        assertFalse(masked.contains("john.doe@example.com"));
-        assertFalse(masked.contains("alice@domain.org"));
+        assertFalse(masked.contains("anshul.bhilare@example.com"));
+        assertFalse(masked.contains("dhruv.patel@domain.org"));
         assertTrue(masked.contains("@example.com"));
         assertTrue(masked.contains("@domain.org"));
     }

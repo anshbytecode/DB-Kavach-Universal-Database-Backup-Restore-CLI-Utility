@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8080}
+  port: 8080
 
 spring:
   application:
@@ -11,9 +11,19 @@ spring:
   datasource:
     url: jdbc:h2:file:./data/backup_audit;AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE
     driver-class-name: org.h2.Driver
-    
     username: sa
     password: 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SPRING_MAIL_USERNAME:dbkavach.banking@gmail.com}
+    password: ${SPRING_MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:

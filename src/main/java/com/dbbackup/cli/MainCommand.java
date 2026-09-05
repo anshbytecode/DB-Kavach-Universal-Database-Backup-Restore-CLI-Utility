@@ -19,6 +19,10 @@ import java.util.concurrent.Callable;
         HistoryCommand.class,
         ScheduleCommand.class,
         SecurityCommand.class,
+        StatusCommand.class,
+        DatabaseCommand.class,
+        AuditCommand.class,
+        VerifyBackupCommand.class,
         HelpCommand.class
     }
 )
@@ -27,11 +31,15 @@ public class MainCommand implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         System.out.println("=========================================================================");
-        System.out.println("          UNIVERSAL DATABASE BACKUP & RESTORE CLI UTILITY               ");
+        System.out.println("      DB-KAVACH BANKING & UNIVERSAL DATABASE UTILITY CLI                 ");
         System.out.println("=========================================================================");
         System.out.println("Usage: db-backup [COMMAND] [OPTIONS]");
         System.out.println();
         System.out.println("Available Subcommands:");
+        System.out.println("  status          - Check system, database, and disaster recovery status");
+        System.out.println("  database        - Manage and inspect connected database inventory");
+        System.out.println("  audit           - View administrative security & banking audit trail");
+        System.out.println("  verify-backup   - Verify integrity and checksum of backup archives");
         System.out.println("  backup          - Create a database backup with compression & storage options");
         System.out.println("  restore         - Restore a database from local or cloud backup");
         System.out.println("  security        - Database Security suite (audit, AES encryption, PII masking, vault)");
