@@ -14,6 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+
 public class CredentialVaultServiceTest {
 
     private CredentialVaultService vaultService;
@@ -23,13 +24,12 @@ public class CredentialVaultServiceTest {
     public void setUp(@TempDir Path tempDir) {
         EncryptionService encryptionService = new EncryptionService();
         vaultService = new CredentialVaultService(encryptionService);
+        
         vaultService.setVaultFilePath(tempDir.resolve("test_vault.enc").toAbsolutePath().toString());
     }
 
     @Test
     public void testSaveAndGetProfile() throws Exception {
-
-        
         CredentialProfile profile = new CredentialProfile();
         profile.setProfileName("prod-mysql");
         profile.setDbmsType(DbmsType.MYSQL);
@@ -52,6 +52,7 @@ public class CredentialVaultServiceTest {
     @Test
     public void testListAndRemoveProfiles() throws Exception {
         
+        
         CredentialProfile p1 = new CredentialProfile();
         p1.setProfileName("db1");
         p1.setDbmsType(DbmsType.SQLITE);
@@ -71,6 +72,7 @@ public class CredentialVaultServiceTest {
         assertTrue(list.contains("db2"));
 
         boolean removed = vaultService.removeProfile(masterPassword, "db1");
+        
         assertTrue(removed);
 
         List<String> updatedList = vaultService.listProfiles(masterPassword);
