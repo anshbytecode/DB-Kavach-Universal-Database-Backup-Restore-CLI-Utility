@@ -30,6 +30,7 @@ public class CredentialVaultServiceTest {
 
     @Test
     public void testSaveAndGetProfile() throws Exception {
+        
         CredentialProfile profile = new CredentialProfile();
         profile.setProfileName("prod-mysql");
         profile.setDbmsType(DbmsType.MYSQL);
