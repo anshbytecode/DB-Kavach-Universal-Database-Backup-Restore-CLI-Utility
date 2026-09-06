@@ -84,6 +84,7 @@ public class CredentialVaultServiceTest {
 
     @Test
     public void testVaultAccessFailsWithWrongMasterPassword() throws Exception {
+
         
         CredentialProfile profile = new CredentialProfile();
         profile.setProfileName("test-profile");
@@ -93,6 +94,7 @@ public class CredentialVaultServiceTest {
         vaultService.saveProfile(masterPassword, profile);
 
         assertThrows(Exception.class, () -> {
+            
             vaultService.getProfile("WrongMasterPassword", "test-profile");
         });
     }
